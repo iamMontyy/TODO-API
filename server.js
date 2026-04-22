@@ -9,17 +9,17 @@ let todos = [
     { id: 2, title: "Merapikan kamar", completed: true }
 ];
 
-// GET: Mengecek server
+
 app.get('/', (req, res) => {
     res.send('Halo! Server To-Do API sudah berjalan.');
 });
 
-// GET: Mengambil semua tugas
+
 app.get('/todos', (req, res) => {
     res.json(todos);
 });
 
-// POST: Menambah tugas baru
+
 app.post('/todos', (req, res) => {
     const newTodo = {
         id: todos.length + 1,
@@ -33,7 +33,7 @@ app.post('/todos', (req, res) => {
     });
 });
 
-// PUT: Mengubah tugas
+
 app.put('/todos/:id', (req, res) => {
     const todoId = parseInt(req.params.id);
     const todo = todos.find(t => t.id === todoId);
@@ -54,7 +54,7 @@ app.put('/todos/:id', (req, res) => {
     }
 });
 
-// DELETE: Menghapus tugas
+
 app.delete('/todos/:id', (req, res) => {
     const todoId = parseInt(req.params.id);
     const todoIndex = todos.findIndex(todo => todo.id === todoId);
@@ -67,7 +67,7 @@ app.delete('/todos/:id', (req, res) => {
     }
 });
 
-// Menyalakan server
+
 app.listen(PORT, () => {
     console.log(`Server berjalan di http://localhost:${PORT}`);
 });
