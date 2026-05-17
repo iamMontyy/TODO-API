@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const PORT = 3000;
-
 app.use(express.json());
 
 let todos = [
@@ -18,8 +17,6 @@ app.get('/', (req, res) => {
 app.get('/todos', (req, res) => {
     res.json(todos);
 });
-
-
 app.post('/todos', (req, res) => {
     const newTodo = {
         id: todos.length + 1,
