@@ -5,7 +5,7 @@ app.use(express.json());
 
 let todos = [
     { id: 1, title: "Belajar Back End", completed: false },
-    { id: 2, title: "Merapikan kamar", completed: true }
+    { id: 2, title: "Merapikan ruang tamu", completed: true }
 ];
 
 
